@@ -1,0 +1,30 @@
+<h1>Prato</h1>
+
+<?php $this->mensagem(); ?>
+
+<p>[<a href="<?php echo $this->url(array('action' => 'create')); ?>">novo</a>]</p>
+
+<table border="1">
+  <thead>
+    <tr>
+      <td>#</td>
+      <td>Categoria</td>
+      <td>Nome do prato</td>
+      <td>Preço</td>
+    </tr>
+  </thead>
+  <tbody>
+      <?php foreach ($this->posts as $prato) { ?>
+        <tr>
+          <td><?php echo $prato['idprato']; ?></td>
+          <td><?php echo $prato['categoria']; ?></td>
+          <td><?php echo $prato['nomePrato']; ?></td>
+          <td><?php echo $prato['preco']; ?></td>
+          <td>
+            [<a href="<?php echo $this->url(array('action' => 'update', 'idprato' => $prato['prato'])); ?>">editar</a>]
+             <?php if ($this->podeApagar) { ?>[<a href="<?php echo $this->url(array('action' => 'delete', 'idprato' => $prato['idprato'])); ?>">apagar</a>]<?php } ?>
+          </td>
+        </tr>
+    <?php } ?>
+  </tbody>
+</table>
