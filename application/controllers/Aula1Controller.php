@@ -6,6 +6,7 @@ class AulaController extends Zend_Controller_Action {
      $data = date('c');
 	 
 	 $this ->view ->dataHoje = $data;   //acessa a view e passa informação
+	 //teste
   }
 
 }
